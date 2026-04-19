@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futebas Sorteador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <button id="theme-toggle">Trocar Tema</button>
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Monte a pelada sem complicacao</p>
+          <h1>Forme ate 4 times com sorteio aleatorio</h1>
+          <p class="hero__text">
+            Cole os nomes dos jogadores, escolha quantos times quer montar e
+            quantas pessoas vao jogar em cada lado. O sistema embaralha tudo e
+            distribui automaticamente.
+          </p>
+        </div>
+        <div class="hero__card">
+          <div class="scoreboard">
+            <span>Times</span>
+            <strong id="summary-teams">2</strong>
+          </div>
+          <div class="scoreboard">
+            <span>Por time</span>
+            <strong id="summary-players">5</strong>
+          </div>
+          <div class="scoreboard scoreboard--accent">
+            <span>Minimo total</span>
+            <strong id="summary-total">10</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="controls">
+          <label class="field">
+            <span>Quantidade de times</span>
+            <select id="team-count">
+              <option value="2">2 times</option>
+              <option value="3">3 times</option>
+              <option value="4">4 times</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Jogadores por time</span>
+            <select id="players-per-team">
+              <option value="5">5 jogadores</option>
+              <option value="6">6 jogadores</option>
+              <option value="7">7 jogadores</option>
+              <option value="8">8 jogadores</option>
+              <option value="9">9 jogadores</option>
+              <option value="10">10 jogadores</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field field--full">
+          <span>Nomes dos jogadores</span>
+          <textarea
+            id="player-list"
+            rows="12"
+            placeholder="Cole um nome por linha&#10;Exemplo:&#10;Ana&#10;Bruno&#10;Carlos&#10;Daniela"
+          ></textarea>
+        </label>
+
+        <div class="actions">
+          <button id="draw-button" type="button">Sortear times</button>
+          <button id="clear-button" type="button" class="button-secondary">
+            Limpar tudo
+          </button>
+        </div>
+
+        <p id="feedback" class="feedback" aria-live="polite">
+          Adicione os nomes e clique em sortear.
+        </p>
+      </section>
+
+      <section class="results-header">
+        <div>
+          <p class="eyebrow">Resultado</p>
+          <h2>Times sorteados</h2>
+        </div>
+        <p class="results-note">
+          Se houver nomes extras, eles entram em uma lista de reservas.
+        </p>
+        
+      </section>
+
+      <section id="results" class="results"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
